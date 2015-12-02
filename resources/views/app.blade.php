@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Laravel</title>
 
-	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+	{{--<link href="{{ asset('/css/app.css') }}" rel="stylesheet">--}}
 	<link href="{{ asset('/css/bootstrap.css') }}" rel="stylesheet">
 
 	<!-- Fonts -->
@@ -34,8 +34,8 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Home</a></li>
-					<li><a href="{{ route('product.index') }}">Products</a></li>
-					<li><a href="{{ route('category.index') }}">Category</a></li>
+					<li><a href="{{ route('admin.products.index') }}">Products</a></li>
+					<li><a href="{{ route('admin.categories.index') }}">Category</a></li>
 				</ul>
 			</div>
 		</div>

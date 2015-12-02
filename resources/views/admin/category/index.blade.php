@@ -17,7 +17,7 @@
                     <tr>
                         <td>{{ $category->id }}</td>
                         <td>{{ $category->name }}</td>
-                        <td>{{ $category-description }}</td>
+                        <td>{{ $category->description }}</td>
                         <td></td>
                     </tr>
                 @endforeach
