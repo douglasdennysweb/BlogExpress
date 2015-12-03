@@ -31,6 +31,6 @@ $factory->define(CodeCommerce\Product::class, function (Faker\Generator $faker) 
     return [
         'name' => $faker->name,
         'description' => $faker->word,
-        'price' => $faker->word,
+        'price' => $faker->latitude,
     ];
 });
