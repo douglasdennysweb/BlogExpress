@@ -17,14 +17,18 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function() {
     Route::group(['prefix' => 'categories'], function() {
         Route::get('', ['as' => 'admin.categories.index', 'uses' => 'AdminCategoriesController@index']);
-        Route::post('create', ['as' => 'admin.categories.create', 'uses' => 'AdminCategoriesController@create']);
-        Route::put('edit/{id}', ['as' => 'admin.categories.edit', 'uses' => 'AdminCategoriesController@edit']);
-        Route::delete('delete/{id}', ['as' => 'admin.categories.delete', 'uses' => 'AdminCategoriesController@delete']);
+        Route::get('create', ['as' => 'admin.categories.create', 'uses' => 'AdminCategoriesController@create']);
+        Route::post('store', ['as' => 'admin.categories.store', 'uses' => 'AdminCategoriesController@store']);
+        Route::get('edit/{id}', ['as' => 'admin.categories.edit', 'uses' => 'AdminCategoriesController@edit']);
+        Route::put('update/{id}', ['as' => 'admin.categories.update', 'uses' => 'AdminCategoriesController@update']);
+        Route::get('destroy/{id}', ['as' => 'admin.categories.destroy', 'uses' => 'AdminCategoriesController@destroy']);
     });
     Route::group(['prefix' => 'products'], function() {
         Route::get('', ['as' => 'admin.products.index', 'uses' => 'AdminProductsController@index']);
-        Route::post('create', ['as' => 'admin.products.create', 'uses' => 'AdminProductsController@create']);
+        Route::get('create', ['as' => 'admin.products.create', 'uses' => 'AdminProductsController@create']);
+        Route::post('store', ['as' => 'admin.products.store', 'uses' => 'AdminProductsController@store']);
         Route::get('edit/{id}', ['as' => 'admin.products.edit', 'uses' => 'AdminProductsController@edit']);
-        Route::get('delete/{id}', ['as' => 'admin.products.delete', 'uses' => 'AdminProductsController@delete']);
+        Route::put('update/{id}', ['as' => 'admin.products.update', 'uses' => 'AdminProductsController@update']);
+        Route::get('destroy/{id}', ['as' => 'admin.products.destroy', 'uses' => 'AdminProductsController@destroy']);
     });
 });

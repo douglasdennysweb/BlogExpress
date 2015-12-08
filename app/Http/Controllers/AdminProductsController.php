@@ -23,4 +23,37 @@ class AdminProductsController extends Controller
 
         return view('admin.product.index', compact('products'));
     }
+
+    public function create()
+    {
+        return view('admin.product.create');
+    }
+
+    public function store(Request $request)
+    {
+        $this->product->create($request->all());
+
+        return redirect()->route('admin.products.index');
+    }
+
+    public function edit($id)
+    {
+        $product = $this->product->find($id);
+
+        return view('admin.product.edit', compact('product'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->product->find($id)->update($request->all());
+
+        return redirect()->route('admin.products.index');
+    }
+
+    public function destroy($id)
+    {
+        $this->product->find($id)->delete();
+
+        return redirect()->route('admin.products.index');
+    }
 }

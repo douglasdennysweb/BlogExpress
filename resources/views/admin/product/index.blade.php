@@ -5,6 +5,10 @@
     <div class="container">
         <h2>List of Product</h2>
 
+        <div class="col-xs-12">
+            <a href="{{ route('admin.products.create') }}" class="btn btn-primary"> New</a>
+        </div>
+
         <table class="table">
             <thead>
                 <th>Cod.</th>
@@ -20,7 +24,8 @@
                         <td>{{ $product->name }}</td>
                         <td>{{ $product->description }}</td>
                         <td>{{ $product->price }}</td>
-                        <td></td>
+                        <td><a href="{{ route('admin.products.edit', ['id' => $product->id]) }}" class="btn btn-default"> Edit</a>
+                        <a href="{{ route('admin.products.destroy', ['id' => $product->id]) }}" class="btn btn-danger"> Delete</a></td>
                     </tr>
                 @endforeach
             </tbody>
