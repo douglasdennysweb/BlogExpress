@@ -29,7 +29,7 @@ class AdminProductsController extends Controller
         return view('admin.product.create');
     }
 
-    public function store(Request $request)
+    public function store(Requests\ProductsRequest $request)
     {
         $this->product->create($request->all());
 
@@ -43,7 +43,7 @@ class AdminProductsController extends Controller
         return view('admin.product.edit', compact('product'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Requests\ProductsRequest $request, $id)
     {
         $this->product->find($id)->update($request->all());
 

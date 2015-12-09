@@ -29,7 +29,7 @@ class AdminCategoriesController extends Controller
         return view('admin.category.create');
     }
 
-    public function store(Request $request)
+    public function store(Requests\CategoryRequest $request)
     {
         $this->category->create($request->all());
 
@@ -43,7 +43,7 @@ class AdminCategoriesController extends Controller
         return view('admin.category.edit', compact('category'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Requests\CategoryRequest $request, $id)
     {
         $this->category->find($id)->update($request->all());
 
