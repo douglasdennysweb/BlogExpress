@@ -32,5 +32,7 @@ $factory->define(CodeCommerce\Product::class, function (Faker\Generator $faker) 
         'name' => $faker->name,
         'description' => $faker->word,
         'price' => $faker->latitude,
+        'featured' => $faker->randomDigit,
+        'recommend' => $faker->randomDigit,
     ];
 });
